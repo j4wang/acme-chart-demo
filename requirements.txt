@@ -1,0 +1,6 @@
+# This project uses only the Python standard library.
+# No pip packages are required to generate SVG output.
+#
+# PNG export (svg_to_png.py / generate.py --png) shells out to the
+# wkhtmltoimage system binary, which is not a pip package and must be
+# installed separately. See README.md for install instructions.

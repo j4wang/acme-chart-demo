@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated output (uncomment if you don't want generated diagrams checked in)
+# output.svg
+# output.png
+
+# Editor/OS
+.DS_Store
+.vscode/
+*.swp
+
+# Temp files from svg_to_png.py if a run is interrupted
+*.html

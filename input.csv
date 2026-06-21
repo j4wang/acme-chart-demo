@@ -1,0 +1,28 @@
+Step Number,Process Step,Actor,Node Type,Pain Point,Notes
+1,Employee incurs an expense,Employee,Step,,
+2,Employee collects the receipt,Employee,Step,"Receipts can be lost or forgotten, resulting in out of pocket losses",
+3,Employee logs into the expense portal,Employee,Step,No mobile filing option results in backlog of unfilled expenses,
+4,Employee uploads the receipt,Employee,Step,,
+5,Employee submits the report,Employee,Step,,Return point for both manager and Finance rejections (correction/resubmit step)
+6,Manager reviews the report,Manager,Decision,"Email context switch, and approvals can pile up",Decision point: approve continues to step 7; reject returns to step 5. Reject path inferred (not stated in the brief)
+7,Approved reports are forwarded to Finance,System,Step,Weekly batch may cause delays of up to 7 days,
+8,Finance reviews for policy compliance,Finance,Step,Policy enforcement comes too late after money is already spent,
+9,Finance approves or flags the report,Finance,Decision,Generic emails for flagged reports are opaque and slow resubmission,Decision point: approve continues to step 10; flag returns to step 5. Reject path inferred; resubmission slowed by the opaque-email pain point on this step
+10,Approved reports are entered into the accounting system,System,Step,Manual ERP entry is error prone and time consuming (~6 hours per week and assumes 10% error rate),
+11,Reimbursement is issued,System,Step,Tight payroll coupling causes delays of 3-6 weeks for reimbursement,
+12,Employee receives no further notification,Employee,Step,Lack of notification means employees must manually check the portal to see status,Treated as an employee action in current state (employee polls portal manually); becomes a system notification step in future state
+,,,,,
+From Step,To Step,Condition,Type,Notes,
+1,2,,Normal,,
+2,3,,Normal,,
+3,4,,Normal,,
+4,5,,Normal,,
+5,6,,Normal,,
+6,7,Approved,Normal,,
+6,5,Rejected,Loop,Manager rejects; employee corrects and resubmits. Inferred path,
+7,8,,Normal,,
+8,9,,Normal,,
+9,10,Approved,Normal,,
+9,5,Flagged,Loop,Finance flags; employee corrects and resubmits. Inferred path; slowed by opaque generic emails,
+10,11,,Normal,,
+11,12,,Normal,,
