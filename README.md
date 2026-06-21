@@ -1,4 +1,4 @@
-# acme-charting-demo
+# acme-chart-demo
 
 Generates a swimlane process diagram (SVG, with optional PNG export) from a
 plain CSV describing process steps, actors, pain points, and the flow
